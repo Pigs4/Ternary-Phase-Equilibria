@@ -16,43 +16,44 @@
 :root{color-scheme:light dark;--bg:light-dark(#ffffff,#0f1418);--ink:light-dark(#141a1f,#e9eef2);--mute:light-dark(#5b6670,#9aa7b2);--line:light-dark(#d5dde3,#2b353d);--panel:light-dark(#f2f6f8,#172028);--acc:#e8452c;--sup:light-dark(#2e6f8e,#6fb3d4);--hi:light-dark(rgba(232,69,44,.13),rgba(232,69,44,.22))}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
+html{font-size:clamp(16px,0.45vw + 9px,24px)}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
-.band{padding:clamp(20px,3vw,40px) max(4vw,16px)}
-h1{font:700 clamp(28px,4vw,40px)/1.05 "Inter Tight",Inter,sans-serif;letter-spacing:-.02em;margin:0 0 6px;text-wrap:balance}
-.sub{color:var(--mute);margin:0 0 18px;max-width:70ch}
-.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;max-width:1240px}
-@media(max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
-.fig{position:relative;aspect-ratio:1/0.9;min-height:320px}
+body{background:var(--bg);color:var(--ink);font:1rem/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(16px,2vw,40px) max(3vw,16px)}
+h1{font:700 clamp(1.75rem,3vw,2.6rem)/1.05 "Inter Tight",Inter,sans-serif;letter-spacing:-.02em;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--mute);margin:0 0 1rem;max-width:90ch}
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(16px,2vw,40px);max-width:none;align-items:start}
+@media(max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}.fig{max-height:none}}
+.fig{position:relative;aspect-ratio:1/0.82;min-height:320px;max-height:calc(100vh - 11rem)}
 .fig>svg{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
 svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font-family:Inter,sans-serif}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
-.panel h2{font:600 20px/1.2 "Inter Tight",Inter,sans-serif;margin:0 0 8px}
-.row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
-button{font:500 15px Inter,sans-serif;min-height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem}
+.panel h2{font:600 1.25rem/1.2 "Inter Tight",Inter,sans-serif;margin:0 0 8px}
+.row{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 .75rem}
+button{font:500 .95rem Inter,sans-serif;min-height:2.75rem;padding:0 .9rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
 button:hover{border-color:var(--sup)}
 button:focus-visible{outline:3px solid var(--sup);outline-offset:2px}
 button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
 .comp div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px}
-.comp b{display:block;font:600 22px/1.1 "Inter Tight",Inter,sans-serif;font-variant-numeric:tabular-nums}
-.comp span{font-size:13px;color:var(--mute)}
+.comp b{display:block;font:600 1.4rem/1.1 "Inter Tight",Inter,sans-serif;font-variant-numeric:tabular-nums}
+.comp span{font-size:.8rem;color:var(--mute)}
 .bars{margin:6px 0 12px}
-.bar{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px;margin:4px 0}
-.bar i{display:block;height:12px;background:var(--sup);border-radius:3px}
+.bar{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:.5rem;align-items:center;font-size:.9rem;margin:.25rem 0}
+.bar i{display:block;height:.75rem;background:var(--sup);border-radius:3px}
 .bar em{font-style:normal;font-variant-numeric:tabular-nums;white-space:nowrap}
-.story{background:var(--bg);border-left:4px solid var(--acc);border-radius:6px;padding:12px 14px;font-size:15.5px}
+.story{background:var(--bg);border-left:4px solid var(--acc);border-radius:6px;padding:.75rem .9rem;font-size:.97rem}
 .story p{margin:0 0 8px}.story p:last-child{margin:0}
-.temp{font:700 18px/1.2 "Inter Tight",Inter,sans-serif;color:var(--acc);text-align:center;flex:1}
+.temp{font:700 1.15rem/1.2 "Inter Tight",Inter,sans-serif;color:var(--acc);text-align:center;flex:1}
 .step{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin:10px 0}
-.key{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mute);margin-top:10px}
+.key{display:flex;flex-wrap:wrap;gap:.9rem;font-size:.82rem;color:var(--mute);margin-top:.6rem}
 .key span::before{content:"";display:inline-block;width:18px;height:0;border-top:2px solid var(--sup);vertical-align:middle;margin-right:6px}
 .key .k2::before{border-top:2px dashed var(--acc)}
 .key .k4::before{border-top:2px solid var(--ink)}
 .key .k3::before{width:10px;height:10px;border:0;border-radius:50%;background:var(--acc)}
-.note{font-size:13px;color:var(--mute);margin-top:12px;max-width:1240px}
-label.tg{display:inline-flex;align-items:center;gap:6px;font-size:14px;min-height:44px}
-label.tg input{width:18px;height:18px}
+.note{font-size:.8rem;color:var(--mute);margin-top:.75rem;max-width:none}
+label.tg{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;min-height:2.75rem}
+label.tg input{width:1.1rem;height:1.1rem}
 </style>
 </head>
 <body>
@@ -150,31 +151,31 @@ const EX={
 let pt={c:.36,a:.10,s:.54},mode='free',stage=0,hov=null;
 const r3=Math.sqrt(3)/2;
 let G={};
-function geo(){const W=s.clientWidth,H=s.clientHeight,m=W<520?28:44;const side=Math.min(W-2*m,(H-2*m)/r3);const x0=(W-side)/2,y0=H-(H-side*r3)/2;G={side,x0,y0}}
+function geo(){const W=s.clientWidth,H=s.clientHeight,m=Math.max(W<520?34:48,Math.round(Math.min(22,W/62)*5));const side=Math.min(W-2*m,(H-2*m)/r3);const x0=(W-side)/2,y0=H-(H-side*r3)/2;G={side,x0,y0}}
 function xy(p){return[G.x0+G.side*(p.a+p.s/2),G.y0-G.side*p.s*r3]}
 function inv(x,y){let sv=(G.y0-y)/(G.side*r3),av=(x-G.x0)/G.side-sv/2,cv=1-av-sv;sv=Math.max(0,sv);av=Math.max(0,av);cv=Math.max(0,cv);const t=sv+av+cv;return{c:cv/t,a:av/t,s:sv/t}}
 function bary(p,v){const P=[p.a+p.s/2,p.s*r3],q=v.map(o=>[o.a+o.s/2,o.s*r3]);const d=(q[1][1]-q[2][1])*(q[0][0]-q[2][0])+(q[2][0]-q[1][0])*(q[0][1]-q[2][1]);const l1=((q[1][1]-q[2][1])*(P[0]-q[2][0])+(q[2][0]-q[1][0])*(P[1]-q[2][1]))/d;const l2=((q[2][1]-q[0][1])*(P[0]-q[2][0])+(q[0][0]-q[2][0])*(P[1]-q[2][1]))/d;return[l1,l2,1-l1-l2]}
 function triOf(p){let best=null,bm=-9;T.forEach(t=>{const b=bary(p,t.v),mn=Math.min(...b);if(mn>bm){bm=mn;best={t,b}}});return best}
 function pts(arr){return arr.map(p=>xy(p).join(',')).join(' ')}
-function draw(){geo();const lab=document.getElementById('tLab').checked,sh=document.getElementById('tTri').checked;const cur=triOf(pt);const fs=s.clientWidth<520?11:13;let h='';
+function draw(){geo();const lab=document.getElementById('tLab').checked,sh=document.getElementById('tTri').checked;const cur=triOf(pt);const fs=Math.round(Math.max(11,Math.min(22,s.clientWidth/62)));const sc=fs/13;let h='';
  T.forEach((t,i)=>{const on=t===cur.t,hv=sh&&hov===i;h+=`<polygon data-i="${i}" points="${pts(t.v)}" fill="${on?'var(--hi)':hv?'color-mix(in srgb,var(--sup) 10%,transparent)':'transparent'}" stroke="none"/>`});
  EDGES.forEach(k=>{const[a,b]=k.split('-').map(x=>K[x]);const A=xy(a),B=xy(b);const on=cur.t.v.includes(a)&&cur.t.v.includes(b);h+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="var(--sup)" stroke-width="${on?2.6:1.1}" opacity="${on?1:.55}"/>`});
  const bcOn=document.getElementById('tBC').checked;if(bcOn){const fid=fieldOf(pt);const F0=FIELDS.find(f=>f.id===fid);
   if(F0)h+=`<polygon points="${pts(F0.ps)}" fill="color-mix(in srgb,var(--ink) 7%,transparent)" stroke="none"/>`;
   BC.forEach(b=>{const A=xy(b.p),B=xy(b.q);h+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="var(--ink)" stroke-width="1.7" opacity=".8"/>`});
-  T.forEach(t=>{const P=xy(t.p);h+=`<circle cx="${P[0]}" cy="${P[1]}" r="${t===cur.t?5:2.6}" fill="${t===cur.t?'#e8452c':'var(--ink)'}"/>`});
+  T.forEach(t=>{const P=xy(t.p);h+=`<circle cx="${P[0]}" cy="${P[1]}" r="${(t===cur.t?5:2.6)*sc}" fill="${t===cur.t?'#e8452c':'var(--ink)'}"/>`});
   const IP=xy(cur.t.p);h+=`<text x="${IP[0]+8}" y="${IP[1]-8}" font-size="${fs}" font-weight="700" fill="#e8452c">${cur.t.t}°</text>`;
   if(F0&&mode==='free'){const c=[G.x0+G.side*F0.cx,G.y0-G.side*F0.cy];h+=`<text x="${c[0]}" y="${c[1]}" text-anchor="middle" font-size="${fs}" font-style="italic" fill="var(--mute)">${K[fid].n} field</text>`}}
  h+=`<polygon points="${pts([K.C,K.A,K.S])}" fill="none" stroke="var(--ink)" stroke-width="2"/>`;
  let ST=null;if(mode!=='free'){ST=state();
   const trail=[EX[mode].seg[0][2]];for(let k=0;k<ST.i;k++)trail.push(EX[mode].seg[k][3]);trail.push(ST.L);
   h+=`<polyline points="${pts(trail)}" fill="none" stroke="#e8452c" stroke-width="3" stroke-linejoin="round" opacity=".85"/>`;
-  const L0=xy(ST.L);ST.tie.forEach(id=>{const S0=xy(K[id]);h+=`<line x1="${L0[0]}" y1="${L0[1]}" x2="${S0[0]}" y2="${S0[1]}" stroke="#e8452c" stroke-width="1.8" stroke-dasharray="6 5"/><circle cx="${S0[0]}" cy="${S0[1]}" r="10" fill="none" stroke="#e8452c" stroke-width="2.5"/>`});
-  if(ST.fr[0][1]>.001)h+=`<circle cx="${L0[0]}" cy="${L0[1]}" r="8" fill="var(--bg)" stroke="#e8452c" stroke-width="3"/><text x="${L0[0]-12}" y="${L0[1]-12}" text-anchor="end" font-size="${fs+1}" font-weight="700" fill="#e8452c">liquid</text>`}
- C.forEach(c=>{const o=K[c[0]],P=xy(o);const corner=['C','A','S'].includes(o.id);const inC=cur.t.v.includes(o);h+=`<circle cx="${P[0]}" cy="${P[1]}" r="${inC?6:4}" fill="${inC?'var(--sup)':'var(--bg)'}" stroke="var(--sup)" stroke-width="2"/>`;
-  if(lab||corner||inC){let dx=0,dy=0,an='middle';if(o.s===0&&!corner){dy=fs+8;an='middle'}else if(o.a===0&&!corner){dx=-9;an='end';dy=4}else if(o.c===0&&!corner){dx=9;an='start';dy=4}else if(o.id==='C'){dx=-6;dy=fs+8;an='end'}else if(o.id==='A'){dx=6;dy=fs+8;an='start'}else if(o.id==='S'){dy=-12}else{dy=-11}
+  const L0=xy(ST.L);ST.tie.forEach(id=>{const S0=xy(K[id]);h+=`<line x1="${L0[0]}" y1="${L0[1]}" x2="${S0[0]}" y2="${S0[1]}" stroke="#e8452c" stroke-width="1.8" stroke-dasharray="6 5"/><circle cx="${S0[0]}" cy="${S0[1]}" r="${10*sc}" fill="none" stroke="#e8452c" stroke-width="2.5"/>`});
+  if(ST.fr[0][1]>.001)h+=`<circle cx="${L0[0]}" cy="${L0[1]}" r="${8*sc}" fill="var(--bg)" stroke="#e8452c" stroke-width="3"/><text x="${L0[0]-12*sc}" y="${L0[1]-12}" text-anchor="end" font-size="${fs+1}" font-weight="700" fill="#e8452c">liquid</text>`}
+ C.forEach(c=>{const o=K[c[0]],P=xy(o);const corner=['C','A','S'].includes(o.id);const inC=cur.t.v.includes(o);h+=`<circle cx="${P[0]}" cy="${P[1]}" r="${(inC?6:4)*sc}" fill="${inC?'var(--sup)':'var(--bg)'}" stroke="var(--sup)" stroke-width="2"/>`;
+  if(lab||corner||inC){let dx=0,dy=0,an='middle';if(o.s===0&&!corner){dy=fs+8;an='middle'}else if(o.a===0&&!corner){dx=-9;an='end';dy=4}else if(o.c===0&&!corner){dx=9;an='start';dy=4}else if(o.id==='C'){dx=-4;dy=fs+10;an='start'}else if(o.id==='A'){dx=4;dy=fs+10;an='end'}else if(o.id==='S'){dy=-12}else{dy=-11}
    const nm=W=>W<520&&!inC&&!corner?'':o.n;const tx=nm(s.clientWidth);if(tx)h+=`<text x="${P[0]+dx}" y="${P[1]+dy}" text-anchor="${an}" font-size="${fs}" font-weight="${inC?600:400}" fill="var(--ink)">${tx}</text>`}});
- const P0=xy(pt);h+=`<circle cx="${P0[0]}" cy="${P0[1]}" r="9" fill="#e8452c" stroke="var(--bg)" stroke-width="3"/>`;if(mode!=='free')h+=`<text x="${P0[0]+13}" y="${P0[1]+5}" font-size="${fs+2}" font-weight="700" fill="#e8452c">${mode}</text>`;
+ const P0=xy(pt);h+=`<circle cx="${P0[0]}" cy="${P0[1]}" r="${9*sc}" fill="#e8452c" stroke="var(--bg)" stroke-width="3"/>`;if(mode!=='free')h+=`<text x="${P0[0]+13}" y="${P0[1]+5}" font-size="${fs+2}" font-weight="700" fill="#e8452c">${mode}</text>`;
  s.innerHTML=h;panel(cur,ST)}
 function dist(p,q){const a=xy(p),b=xy(q);return Math.hypot(a[0]-b[0],a[1]-b[1])}
 function lerp(p,q,u){return{c:p.c+(q.c-p.c)*u,a:p.a+(q.a-p.a)*u,s:p.s+(q.s-p.s)*u}}
@@ -189,13 +190,13 @@ function state(){const ex=EX[mode],n=ex.seg.length;const i=pos<=0?0:Math.min(n-1
 function panel(cur,ST){document.getElementById('comp').innerHTML=[['CaO',pt.c],['Al₂O₃',pt.a],['SiO₂',pt.s]].map(([n,v])=>`<div><b>${(v*100).toFixed(1)}%</b><span>wt% ${n}</span></div>`).join('');
  const v=cur.t.v;document.getElementById('triName').textContent=v.map(o=>o.n).join(' – ');
  const b=cur.b.map(x=>Math.max(0,x));const sm=b.reduce((a,c)=>a+c,0)||1;
- document.getElementById('bars').innerHTML='<div style="font-size:13px;color:var(--mute);margin-bottom:4px">Final solids after the last liquid freezes</div>'+v.map((o,i)=>`<div class="bar"><span>${o.n}</span><i style="width:${(b[i]/sm*100).toFixed(1)}%"></i><em>${(b[i]/sm*100).toFixed(0)}%</em></div>`).join('');
+ document.getElementById('bars').innerHTML='<div style="font-size:.8rem;color:var(--mute);margin-bottom:.25rem">Final solids after the last liquid freezes</div>'+v.map((o,i)=>`<div class="bar"><span>${o.n}</span><i style="width:${(b[i]/sm*100).toFixed(1)}%"></i><em>${(b[i]/sm*100).toFixed(0)}%</em></div>`).join('');
  const story=document.getElementById('story'),stp=document.getElementById('stepper');
  if(mode==='free'){stp.hidden=true;const onLine=Math.min(...cur.b)<.02;
   const fid=fieldOf(pt),inTri=fid&&v.some(o=>o.id===fid);
   story.innerHTML=`${fid?`<p><b>First solid: ${K[fid].n}</b> (your melt is in its primary field, shaded grey). ${inTri?'It is a corner of your compatibility triangle, so it stays to the end.':'It is NOT a corner of your compatibility triangle, so it will be <b>resorbed</b> (used up) before the end.'}</p>`:''}<p><b>Your melt is in the ${v.map(o=>o.n).join(' – ')} compatibility triangle.</b> The sides are Alkemade lines: each joins two solids that can coexist.</p><p>By conservation of mass, the final three solids must be these corners, because only a triangle that contains your point can add up to it. The bars are the tie-triangle (lever) split.</p><p>The last liquid disappears at the invariant point where these three solids' primary fields meet (orange dot): about <b>${cur.t.t}°C</b>. Along the way, the liquid moves away from the first solid until it hits a boundary curve (black lines), then runs along boundary curves down to that point.</p>${onLine?'<p><b>You are on an Alkemade line:</b> only two solids at the end, so the line acts like a binary.</p>':''}${cur.t.note?`<p>${cur.t.note}</p>`:''}`}
  else{stp.hidden=false;const n=EX[mode].seg.length,g=ST.g;
-  document.getElementById('bars').innerHTML='<div style="font-size:13px;color:var(--mute);margin-bottom:4px">Phases present right now (wt%)</div>'+ST.fr.map(([k,v])=>`<div class="bar"><span>${k==='Liquid'?'<b style="color:#e8452c">Liquid</b>':K[k].n}</span><i style="width:${(v*100).toFixed(1)}%;${k==='Liquid'?'background:#e8452c':''}"></i><em>${(v*100).toFixed(0)}%</em></div>`).join('');
+  document.getElementById('bars').innerHTML='<div style="font-size:.8rem;color:var(--mute);margin-bottom:.25rem">Phases present right now (wt%)</div>'+ST.fr.map(([k,v])=>`<div class="bar"><span>${k==='Liquid'?'<b style="color:#e8452c">Liquid</b>':K[k].n}</span><i style="width:${(v*100).toFixed(1)}%;${k==='Liquid'?'background:#e8452c':''}"></i><em>${(v*100).toFixed(0)}%</em></div>`).join('');
   document.getElementById('tval').textContent=g[0]===g[1]?g[0]:(ST.u<.02?g[0]:ST.u>.98?g[1]:`${g[0]} → ${g[1]}`);
   document.getElementById('prev').disabled=pos<=0;document.getElementById('next').disabled=pos>=n;document.getElementById('play').textContent=timer?'Pause':(pos>=n?'Replay':'Play');
   story.innerHTML=`<p><b>Stage ${ST.i+1} of ${n}.</b> ${g[5]}</p><p style="font-size:13px;color:var(--mute)">Liquid path is schematic (straight segments). Temperatures are from the book; the phase bars are calculated from the geometry (lever rule / tie triangle).</p>`}}
